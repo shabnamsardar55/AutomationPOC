@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./../styles/Content.css";
-import Table from "./../components/dataTable";
+import Table from "../components/dataTable.js";
 import RemoveRedEyeIcon from '@material-ui/icons/RemoveRedEye';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 
