@@ -106,7 +106,7 @@ export default function table() {
           </TableRow>
         </TableHead>
         <TableBody  className="Row">
-          {rows.map((row) => (
+          {rows.map((row,i) => (
             <StyledTableRow key={row.name} style={{color:"#ffffff"}}>
               <TableCell component="th" scope="row" style={{color:"#80aaff"}}>
                 {row.name}
@@ -119,7 +119,7 @@ export default function table() {
               {row.status==="Queued" ? <WatchLaterIcon color='primary' style={{float:"right"}}/> : null}
               </TableCell>
               <TableCell align="left">{row.userDomain}</TableCell>
-              <TableCell align="left">{row.defaultStatus}</TableCell>
+              <TableCell align="left">{i===0 ? <CheckIcon/> : null}</TableCell>
               <TableCell align="left">{row.lastUpdated}</TableCell>
               <TableCell align="left">{row.updatedBy}</TableCell>
               <TableCell align="left"><Tooltip title="More">
