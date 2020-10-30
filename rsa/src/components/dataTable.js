@@ -19,6 +19,7 @@ import WarningIcon from '@material-ui/icons/Warning';
 import WatchLaterIcon from '@material-ui/icons/WatchLater';
 import { green } from '@material-ui/core/colors';
 import { yellow } from '@material-ui/core/colors';
+import More from './../container/more';
 
 
 function createData(name, status, userDomain, defaultStatus, lastUpdated, updatedBy , actions) {
@@ -47,7 +48,14 @@ const StyledTableRow = withStyles(() =>
 
   
 
-export default function table() {
+const DataTable = (props) => {
+
+  const [show, setShow]= useState(false);
+
+    const onClickHandler = () =>{
+        
+        setShow(!show);
+    }
    
     return (
         <TableContainer>
@@ -124,13 +132,17 @@ export default function table() {
               <TableCell align="left">{row.updatedBy}</TableCell>
               <TableCell align="left"><Tooltip title="More">
                 <IconButton aria-label="more">
-                <MoreHorizIcon color='primary'/>
+                <MoreHorizIcon color='primary' onClick={onClickHandler}/>
                 </IconButton>
-              </Tooltip></TableCell>
+              </Tooltip>
+              </TableCell>
             </StyledTableRow>
           ))}
         </TableBody>
-      </Table>
+      </Table>      
+      <More show={show}/>
     </TableContainer>
       );
 }
+
+export default DataTable;

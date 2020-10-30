@@ -3,6 +3,10 @@
     aria-label: "simple table";
   }
 
+  TableCell{
+    position: relative;
+  }
+
   .line{
     position: relative;
     top: 12px;

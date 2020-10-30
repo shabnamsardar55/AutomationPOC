@@ -9,6 +9,14 @@
     box-shadow: 1px 5px 10px rgb(211, 211, 216);
 }
 
+.eye{
+    float: right;
+}
+
+.plus{
+    float: right;
+}
+
 .Column{
     padding: 5px;
     border: 2px dashed gray;
