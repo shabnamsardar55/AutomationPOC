@@ -17,7 +17,7 @@ describe('<Menu />', () => {
 
     })
 
-    it('should not show menu items when show is false' , () =>{
+    it('should show menu items when show is true' , () =>{
         wrapper.setProps({show: true});
         expect(wrapper.contains("Name")).toBe(true);
 

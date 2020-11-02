@@ -17,7 +17,7 @@ describe('<More />', () => {
 
     })
 
-    it('should not show more items when show is false' , () =>{
+    it('should show more items when show is true' , () =>{
         wrapper.setProps({show: true});
         expect(wrapper.contains("Delete")).toBe(true);
 
