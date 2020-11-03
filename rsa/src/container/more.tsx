@@ -1,13 +1,19 @@
 import React, {useState} from 'react';
-import './../styles/More.css'
+import './../styles/More.css';
 
-const More = (props) => {
-  if(!props.show)
+type MoreProps = {
+  show: boolean,
+}
+
+const More = ({show}: MoreProps) => {
+
+  
+  if(!show)
   { 
       return (null);
   }
   return (
-    <div className="more">
+    <div className= "more">
        <div>Sync Now</div>
        <div>Delete</div>      
     </div>

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import "./../styles/Content.css";
-import Table from "../components/dataTable.js";
+import Table from "../components/dataTable";
 import RemoveRedEyeIcon from '@material-ui/icons/RemoveRedEye';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
-import Menu from './../container/menu';
+import Menu from '../container/menu';
 
-const Content = (props) => {
+const Content = () => {
 
     const [show, setShow]= useState(false);
 
@@ -21,12 +21,12 @@ const Content = (props) => {
             <div>
                <span className="Column">Drag a column name here to group the items by the value within that column.</span>
                <span className="eye">
-               <Tooltip align="right" title="Menu list">
+               <Tooltip title="Menu list">
                 <IconButton aria-label="menu list">
                 <RemoveRedEyeIcon color='primary' onClick={onClickHandler}/> 
                 </IconButton>
               </Tooltip>
-              <Tooltip align="right" title="Add list">
+              <Tooltip title="Add list">
                 <IconButton aria-label="Add list">
                 <AddCircleIcon color='primary'/> 
                 </IconButton>

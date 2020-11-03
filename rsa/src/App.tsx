@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from './layouts/header';
 import Content from './layouts/content';
 import './styles/App.css';

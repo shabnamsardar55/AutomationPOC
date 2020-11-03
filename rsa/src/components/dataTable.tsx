@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./../styles/Table.css";
-import { makeStyles, withStyles, theme, createStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles, createStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -19,10 +19,10 @@ import WarningIcon from '@material-ui/icons/Warning';
 import WatchLaterIcon from '@material-ui/icons/WatchLater';
 import { green } from '@material-ui/core/colors';
 import { yellow } from '@material-ui/core/colors';
-import More from './../container/more';
+import More from '../container/more';
 
 
-function createData(name, status, userDomain, defaultStatus, lastUpdated, updatedBy , actions) {
+function createData(name: string, status: string, userDomain: string, defaultStatus: string, lastUpdated: string, updatedBy: string , actions: string) {
   return { name, status, userDomain, defaultStatus, lastUpdated, updatedBy , actions};
 }
 
@@ -48,7 +48,7 @@ const StyledTableRow = withStyles(() =>
 
   
 
-const DataTable = (props) => {
+const DataTable = () => {
 
   const [show, setShow]= useState(false);
 
@@ -63,7 +63,7 @@ const DataTable = (props) => {
         <TableHead>
           <TableRow style={{borderBottom: "2px solid #9e9e9e" }}>
             <TableCell align="left">NAME
-            <Tooltip align="right" title="Filter list">
+            <Tooltip title="Filter list">
                 <IconButton aria-label="filter list">
                   <FilterListIcon />
                 </IconButton>
@@ -71,7 +71,7 @@ const DataTable = (props) => {
               <span className="line"/>
             </TableCell>
             <TableCell align="left">SYNC STATUS
-              <Tooltip align="right" title="Filter list">
+              <Tooltip title="Filter list">
                 <IconButton aria-label="filter list">
                   <FilterListIcon />
                 </IconButton>
@@ -79,7 +79,7 @@ const DataTable = (props) => {
               <span className="line"/>
             </TableCell>
             <TableCell align="left">USER'S DOMAIN
-            <Tooltip align="right" title="Filter list">
+            <Tooltip title="Filter list">
                 <IconButton aria-label="filter list">
                   <FilterListIcon />
                 </IconButton>
@@ -87,7 +87,7 @@ const DataTable = (props) => {
               <span className="line"/>
             </TableCell>
             <TableCell align="left">DEFAULT
-            <Tooltip align="right" title="Filter list">
+            <Tooltip title="Filter list">
                 <IconButton aria-label="filter list">
                   <FilterListIcon />
                 </IconButton>
@@ -95,7 +95,7 @@ const DataTable = (props) => {
               <span className="line"/>
             </TableCell>
             <TableCell align="left">LAST UPDATED
-            <Tooltip align="right" title="Filter list">
+            <Tooltip title="Filter list">
                 <IconButton aria-label="filter list">
                   <FilterListIcon />
                 </IconButton>
@@ -103,7 +103,7 @@ const DataTable = (props) => {
               <span className="line"/>
             </TableCell>
             <TableCell align="left">UPDATED BY
-            <Tooltip align="right" title="Filter list">
+            <Tooltip title="Filter list">
                 <IconButton aria-label="filter list">
                   <FilterListIcon />
                 </IconButton>
@@ -123,7 +123,7 @@ const DataTable = (props) => {
               style={row.status!=="Active" && row.status!=="Inactive" ? {color:"#80aaff"} : {color:"#000000"}}>
               {row.status}{row.status==="Failed" ? <ErrorIcon color='error' style={{float:"right"}}/> : null}
               {row.status==="Completed" ? <CheckCircleIcon style={{float:"right" , color: green[600]}}/> : null}
-              {row.status==="Cancelled" ? <WarningIcon color='warning' style={{float:"right", color: yellow[800]}}/> : null}
+              {row.status==="Cancelled" ? <WarningIcon style={{float:"right", color: yellow[800]}}/> : null}
               {row.status==="Queued" ? <WatchLaterIcon color='primary' style={{float:"right"}}/> : null}
               </TableCell>
               <TableCell align="left">{row.userDomain}</TableCell>
@@ -140,7 +140,7 @@ const DataTable = (props) => {
           ))}
         </TableBody>
       </Table>      
-      <More show={show}/>
+      <More show={show} />
     </TableContainer>
       );
 }

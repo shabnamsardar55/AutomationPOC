@@ -3,14 +3,19 @@ import "./../styles/Content.css";
 import Checkbox from '@material-ui/core/Checkbox';
 import './../styles/Menu.css'
 
-const Menu = (props) => {
+type MenuProps = {
+  show: boolean,
+}
+
+const Menu = ({show}: MenuProps) => {
     const [checked, setChecked] = useState(true);
 
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    setChecked(event.currentTarget.checked);
   };
 
-  if(!props.show)
+  if(!show)
   { 
       return (null);
   }
